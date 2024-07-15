@@ -3,29 +3,20 @@ const mysql = require("mysql2/promise"); // Using promise version of mysql2
 const cors = require('cors');
 
 const app = express();
-const port = 3009;
+const port = 3004;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// MySQL connection
-const dbConfig = {
-    host: 'localhost',
-    user: 'root',
-    password: 'Ryan@786',
-    database: 'ryan'
+// Estabhlish connection with database
+const connectToDatabase = require('./Database/Database');
+let db;
+const connectionDatabase = async () => {
+    db = await connectToDatabase();
 };
 
-let db;
-(async () => {
-    try {
-        db = await mysql.createConnection(dbConfig);
-        console.log('Connected to the MySQL database');
-    } catch (err) {
-        console.error('Error connecting to the database:', err);
-    }
-})();
+connectionDatabase();
 
 // API route to get students
 app.get('/api/students', async (req, res) => {

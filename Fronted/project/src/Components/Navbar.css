@@ -1,0 +1,21 @@
+
+.container{
+
+    background-color: cadetblue;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 30px;
+    
+    
+    
+}
+
+
+.link{
+
+    text-decoration: none;
+    color:black;
+    size: 300px;
+}
