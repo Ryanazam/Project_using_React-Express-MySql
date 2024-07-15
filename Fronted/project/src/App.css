@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-list th,
+.student-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.student-list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f2f2f2;
+}
