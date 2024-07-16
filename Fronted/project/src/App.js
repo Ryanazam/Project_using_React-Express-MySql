@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Navbar from './Components/Navbar';
-import Home from './Components/HomePage';
-import Students from './Components/StudentList';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Page/Homepage/HomePage';
+import Students from './Components/StudentList/StudentList';
 import './App.css'; // Optional: Import CSS for styling
 
 function App() {

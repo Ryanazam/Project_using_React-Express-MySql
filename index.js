@@ -3,7 +3,7 @@ const mysql = require("mysql2/promise"); // Using promise version of mysql2
 const cors = require('cors');
 
 const app = express();
-const port = 3009;
+const port = 3005;
 
 // Middleware
 app.use(cors());
