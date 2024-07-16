@@ -18,4 +18,9 @@
     text-decoration: none;
     color:black;
     size: 300px;
+    border: none;
+    padding: 10px;
+    background:transparent;
+    font-size: 1rem;
+    cursor: pointer;
 }

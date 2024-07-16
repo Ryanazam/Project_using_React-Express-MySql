@@ -3,7 +3,7 @@ const mysql = require("mysql2/promise"); // Using promise version of mysql2
 const cors = require('cors');
 
 const app = express();
-const port = 3004;
+const port = 3009;
 
 // Middleware
 app.use(cors());
@@ -18,17 +18,10 @@ const connectionDatabase = async () => {
 
 connectionDatabase();
 
-// API route to get students
-app.get('/api/students', async (req, res) => {
-    try {
-        const [results] = await db.query('SELECT * FROM ryan.students');
-        res.json(results);
-        console.log(results);
-    } catch (err) {
-        console.error('Error fetching students:', err);
-        res.status(500).send('Error fetching students');
-    }
-});
+const studentRoute = require("./Routes/StudentRoute")
+
+app.use('/api',studentRoute(db));
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

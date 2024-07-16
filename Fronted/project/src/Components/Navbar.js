@@ -1,16 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Navbar.css'
+import React from 'react';
+import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ setCurrentPage }) => {
   return (
     <div className='container'>
-      <div><Link to='/' className='link' >Home </Link></div>
-      <div><Link to='/student' className='link'>StudentList </Link></div>
-        
-        
+      <div><button onClick={() => setCurrentPage('home')} className='link'>Home</button></div>
+      <div><button onClick={() => setCurrentPage('students')} className='link'>StudentList</button></div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

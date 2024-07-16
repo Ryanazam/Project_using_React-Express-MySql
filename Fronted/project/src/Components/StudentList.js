@@ -19,7 +19,7 @@ const StudentList = () => {
 
     return (
         <div className="student-list">
-            <h1>Student List</h1>
+            <h1 className='heading'>Student List</h1>
             <table>
                 <thead>
                     <tr>
