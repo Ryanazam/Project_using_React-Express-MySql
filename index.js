@@ -1,7 +1,6 @@
 const express = require('express');
-const mysql = require("mysql2/promise"); // Using promise version of mysql2
+const studentRoute = require("./Routes/StudentRoute")
 const cors = require('cors');
-
 const app = express();
 const port = 3005;
 
@@ -10,20 +9,30 @@ app.use(cors());
 app.use(express.json());
 
 // Estabhlish connection with database
+
 const connectToDatabase = require('./Database/Database');
-let db;
+
+
 const connectionDatabase = async () => {
+    let db;
     db = await connectToDatabase();
+
+    app.use('/api',studentRoute(db));
+
 };
 
 connectionDatabase();
 
-const studentRoute = require("./Routes/StudentRoute")
+// console.log(db)
 
-app.use('/api',studentRoute(db));
+
+
+
 
 
 app.listen(port, () => {
+
     console.log(`Server running on port ${port}`);
+
 });
 

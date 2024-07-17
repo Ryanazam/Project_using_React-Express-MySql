@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Page/Homepage/HomePage';
 import Students from './Components/StudentList/StudentList';
 import './App.css'; // Optional: Import CSS for styling
+import Card from "./Components/Card/Card"
 
 function App() {
     const [currentPage, setCurrentPage] = useState('home');
@@ -13,6 +14,8 @@ function App() {
                 return <Home />;
             case 'students':
                 return <Students />;
+            case 'card':
+                return <Card/>;   
             default:
                 return <Home />;
         }

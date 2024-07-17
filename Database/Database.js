@@ -1,4 +1,4 @@
-const mysql = require("mysql2/promise");
+const mysql  = require("mysql2/promise");
 
 const dbConfig = {
     host: 'localhost',
@@ -8,7 +8,6 @@ const dbConfig = {
 };
 
 let db;
-
 const connectToDatabase = async () => {
     if (!db) {
         try {
